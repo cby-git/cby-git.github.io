@@ -1,0 +1,693 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  
+    <meta name="baidu-site-verification" content="jre71SFl7b" />
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="lixinsta">
+  <meta name="keywords" content="">
+  <title>jQuery初识 - 自学前端的程序猿</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="自学前端的程序猿" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 40vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>自学前端的程序猿</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-images"></i>
+                思维导图
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://www.processon.com/view/5f3944647d9c0806d41a7d7a#map">
+                    
+                    HTML
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://www.processon.com/view/5f3a1982079129531b5ec238#map">
+                    
+                    CSS
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/icon/">
+                    
+                    JavaScript
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-08-17 20:23" pubdate>
+      2020年8月17日 晚上
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      12
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">jQuery初识</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="JavaScript库"><a href="#JavaScript库" class="headerlink" title="JavaScript库"></a>JavaScript库</h1><p>JavaScript库：即 library，是一个封装好的特定的集合（方法和函数）。从封装一大堆函数的角度理解库，就是在这个库中，封装了很多预先定义好的函数在里面，比如动画<code>animate</code>、<code>hide</code>、<code>show</code>，比如获取元素等。</p>
+<h2 id="jQuery概念"><a href="#jQuery概念" class="headerlink" title="jQuery概念"></a>jQuery概念</h2><ul>
+<li><p>jQuery 是一个快速、简洁的 JavaScript 库，其设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。</p>
+</li>
+<li><p>j 就是 JavaScript；   Query 查询； 意思就是查询js，把js中的DOM操作做了封装，我们可以快速的查询使用里面的功能。</p>
+</li>
+<li><p>jQuery 封装了 JavaScript 常用的功能代码，优化了 DOM 操作、事件处理、动画设计和 Ajax 交互。</p>
+</li>
+<li><p>学习jQuery本质： 就是学习调用这些函数（方法）。</p>
+</li>
+<li><p>jQuery 出现的目的是加快前端人员的开发速度，我们可以非常方便的调用和使用它，从而提高开发效率。</p>
+</li>
+</ul>
+<h2 id="JavaScript缺点"><a href="#JavaScript缺点" class="headerlink" title="JavaScript缺点"></a>JavaScript缺点</h2><ol>
+<li>不能添加多个入口函数（window,onload）。如果添加多个就会被覆盖。</li>
+<li>原生JS的API名字太长，难记。</li>
+<li>原生JS有时代码会有些冗余</li>
+<li>原生JS中有些属性或者方法有浏览器兼容问题</li>
+<li>原生JS容错率低，前面代码出了问题，后面代码执行不了。</li>
+</ol>
+<h2 id="jQuery优势"><a href="#jQuery优势" class="headerlink" title="jQuery优势"></a>jQuery优势</h2><ol>
+<li>轻量级。核心文件才几十kb，不会影响页面加载速度。</li>
+<li>跨浏览器兼容，基本兼容了现在主流的浏览器。</li>
+<li>链式编程、隐式迭代。</li>
+<li>对事件、样式、动画支持，大大简化了DOM操作。</li>
+<li>支持插件扩展开发。有着丰富的第三方的插件，例如：树形菜单、日期控件、轮播图等。</li>
+<li>免费、开源。</li>
+</ol>
+<h1 id="jQuery的使用"><a href="#jQuery的使用" class="headerlink" title="jQuery的使用"></a>jQuery的使用</h1><ul>
+<li>引入jQuery文件</li>
+<li>写一个入口函数</li>
+<li>编写jQuery代码</li>
+</ul>
+<h2 id="jQuery的入口函数"><a href="#jQuery的入口函数" class="headerlink" title="jQuery的入口函数"></a>jQuery的入口函数</h2><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-comment">// 第一种: 简单易用。</span>
+$(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;   
+    ...  <span class="hljs-comment">// 此处是页面 DOM 加载完成的入口</span>
+&#125;) ; 
+
+<span class="hljs-comment">// 第二种: 繁琐，但是也可以实现</span>
+$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;
+   ...  <span class="hljs-comment">//  此处是页面DOM加载完成的入口</span>
+&#125;);
+<span class="hljs-comment">/*</span>
+<span class="hljs-comment">   $是jQuery的别称，在代码中可以使用jQuery代替，但为了方便，通常都直接使用 $</span>
+<span class="hljs-comment">   $是jQuery的顶级对象，相当于原生JavaScript中的 window。把元素利用$包装成jQuery对象，就可以调用jQuery 的方法。</span>
+<span class="hljs-comment">*/</span></code></pre></div>
+
+<h1 id="JQuery对象和DOM对象"><a href="#JQuery对象和DOM对象" class="headerlink" title="JQuery对象和DOM对象"></a>JQuery对象和DOM对象</h1><ul>
+<li>使用原原生JS获取的对象就是DOM对象</li>
+<li>JQuery方法获取的元素就是JQuery对象</li>
+<li>JQuery对象本质就是：利用$对DOM对象包装后产生的对象（伪数组形式存储）</li>
+</ul>
+<blockquote>
+<p>注意：</p>
+<p>只有jQuery对象才能使用jQuery方法，DOM对象只能使用JS方法</p>
+</blockquote>
+<h2 id="jQuery对象和DOM对象转换"><a href="#jQuery对象和DOM对象转换" class="headerlink" title="jQuery对象和DOM对象转换"></a>jQuery对象和DOM对象转换</h2><p>DOM 对象与 jQuery 对象之间是可以相互转换的。因为原生js 比 jQuery 更大，原生的一些属性和方法 jQuery没有给我们封装. 要想使用这些属性和方法需要把jQuery对象转换为DOM对象才能使用。</p>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-comment">// 1.DOM对象转换成jQuery对象，方法只有一种</span>
+<span class="hljs-keyword">var</span> box = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;box&#x27;</span>);  <span class="hljs-comment">// 获取DOM对象</span>
+<span class="hljs-keyword">var</span> jQueryObject = $(box);  <span class="hljs-comment">// 把DOM对象转换为 jQuery 对象</span>
+
+<span class="hljs-comment">// 2.jQuery 对象转换为 DOM 对象有两种方法：</span>
+<span class="hljs-comment">//   2.1 jQuery对象[索引值]</span>
+<span class="hljs-keyword">var</span> domObject1 = $(<span class="hljs-string">&#x27;div&#x27;</span>)[<span class="hljs-number">0</span>]
+
+<span class="hljs-comment">//   2.2 jQuery对象.get(索引值)</span>
+<span class="hljs-keyword">var</span> domObject2 = $(<span class="hljs-string">&#x27;div&#x27;</span>).get(<span class="hljs-number">0</span>)</code></pre></div>
+
+<blockquote>
+<p>总结：</p>
+<p>实际开发比较常用的是把DOM对象转换为jQuery对象，这样能够调用功能更加强大的jQuery中的方法。</p>
+</blockquote>
+<h1 id="知识铺垫"><a href="#知识铺垫" class="headerlink" title="知识铺垫"></a>知识铺垫</h1><ul>
+<li>jQuery设置样式</li>
+</ul>
+<div class="hljs"><pre><code class="hljs javascript">$(<span class="hljs-string">&#x27;div&#x27;</span>).css(<span class="hljs-string">&#x27;属性&#x27;</span>, <span class="hljs-string">&#x27;值&#x27;</span>)</code></pre></div>
+
+<ul>
+<li>jQuery的排他思想</li>
+</ul>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-comment">// 想要多选一的效果，排他思想：当前元素设置样式，其余的兄弟元素清除样式。</span>
+$(<span class="hljs-built_in">this</span>).css(“color”,”red”);
+$(<span class="hljs-built_in">this</span>).siblings(). css(“color”,””);</code></pre></div>
+
+<ul>
+<li>隐式迭代</li>
+</ul>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-comment">// 遍历内部 DOM 元素（伪数组形式存储）的过程就叫做隐式迭代。</span>
+<span class="hljs-comment">// 简单理解：给匹配到的所有元素进行循环遍历，执行相应的方法，而不用我们再进行循环，简化我们的操作，方便我们调用。</span>
+$(<span class="hljs-string">&#x27;div&#x27;</span>).hide();  <span class="hljs-comment">// 页面中所有的div全部隐藏，不用循环操作</span></code></pre></div>
+
+<ul>
+<li>链式编程</li>
+</ul>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-comment">// 链式编程是为了节省代码量，看起来更优雅。</span>
+$(<span class="hljs-built_in">this</span>).css(<span class="hljs-string">&#x27;color&#x27;</span>, <span class="hljs-string">&#x27;red&#x27;</span>).sibling().css(<span class="hljs-string">&#x27;color&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);</code></pre></div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/">JavaScript</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/jQuery/">jQuery</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/JavaScript/">JavaScript</a>
+                    
+                      <a class="hover-with-bg" href="/tags/jQuery/">jQuery</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/08/17/jQuery%E9%80%89%E6%8B%A9%E5%99%A8/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">jQuery选择器</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/08/17/%E5%88%9D%E8%AF%86Node/">
+                        <span class="hidden-mobile">初识Node</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+
+  
+	  <!-- 博客运营时间 -->
+	  <div>
+		  <span id="timeDate">载入天数...</span>
+		  <span id="times">载入时分秒...</span>
+		  <script>
+		  var now = new Date();
+		  function createtime(){
+			  var grt= new Date("08/14/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+			  now.setTime(now.getTime()+250);
+			  days = (now - grt ) / 1000 / 60 / 60 / 24;
+			  dnum = Math.floor(days);
+			  hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+			  hnum = Math.floor(hours);
+			  if(String(hnum).length ==1 ){
+				  hnum = "0" + hnum;
+			  }
+			  minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+			  mnum = Math.floor(minutes);
+			  if(String(mnum).length ==1 ){
+						mnum = "0" + mnum;
+			  }
+			  seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+			  snum = Math.round(seconds);
+			  if(String(snum).length ==1 ){
+						snum = "0" + snum;
+			  }
+			  document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天";
+			  document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+		  }
+		  setInterval("createtime()",250);
+		  </script>
+		</div>
+		
+		
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+		
+
+		
+	
+		<!-- 一言 -->
+		<p id="hitokoto">:D 获取中...</p>
+		<script>
+		  fetch('https://v1.hitokoto.cn')
+			.then(response => response.json())
+			.then(data => {
+			  const hitokoto = document.getElementById('hitokoto')
+			  hitokoto.innerText = data.hitokoto
+			  })
+			  .catch(console.error)
+		</script>
+	</div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "jQuery初识&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

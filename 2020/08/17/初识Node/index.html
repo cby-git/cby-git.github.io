@@ -1,0 +1,667 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  
+    <meta name="baidu-site-verification" content="jre71SFl7b" />
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="lixinsta">
+  <meta name="keywords" content="">
+  <title>初识Node - 自学前端的程序猿</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="自学前端的程序猿" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 40vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>自学前端的程序猿</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-images"></i>
+                思维导图
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://www.processon.com/view/5f3944647d9c0806d41a7d7a#map">
+                    
+                    HTML
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://www.processon.com/view/5f3a1982079129531b5ec238#map">
+                    
+                    CSS
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/icon/">
+                    
+                    JavaScript
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-08-17 20:23" pubdate>
+      2020年8月17日 晚上
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      938 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      10
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">初识Node</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="什么是Node？"><a href="#什么是Node？" class="headerlink" title="什么是Node？"></a>什么是Node？</h1><p>Node 是 JavaScript 的一种<strong>运行环境</strong>。可以使 JS 代码不依赖浏览器也可以执行。他俩的差异如下：</p>
+<p><img src="./01.png" srcset="/img/loading.gif" alt="img"></p>
+<p>两个运行环境都包含了 ECMScript 。另一方面 JavaScript 包含了 <code>BOM</code> 和 <code>DOM</code>。</p>
+<ul>
+<li>BOM：浏览器对象模型，也就是 <code>window</code> 对象</li>
+<li>DOM：文档对象模型，也就是 <code>document</code> 对象</li>
+</ul>
+<p>而 Node 则包含了 V8 引擎。V8 是 Chrome 浏览器的 <code>JS</code> 引擎，性能和安全性都很高。Node进一步将 V8 引擎加工成可以在任何操作系统中运行 JS 的平台。</p>
+<h1 id="Node-全局对象"><a href="#Node-全局对象" class="headerlink" title="Node 全局对象"></a>Node 全局对象</h1><p><img src="./02.png" srcset="/img/loading.gif" alt="img"></p>
+<p>可以看到 JavaScript 全局对象可以分为四类：</p>
+<ol>
+<li>浏览器专属，例如 <code>window</code>、<code>alert</code> 等等；</li>
+<li>Node 专属，例如 <code>process</code>、<code>Buffer</code>、<code>__dirname</code>、<code>__filename</code> 等等；</li>
+<li>浏览器和 Node 共有，但是<strong>实现方式不同</strong>，例如 <code>console</code>、<code>setTimeout</code>、<code>setInterval</code> 等；</li>
+<li>浏览器和 Node 共有，并且属于 <strong>ECMAScript 语言定义</strong>的一部分，例如 <code>Date</code>、<code>String</code>、<code>Promise</code> 等；</li>
+</ol>
+<h2 id="process"><a href="#process" class="headerlink" title="process"></a><strong>process</strong></h2><p><strong>process</strong> 是管理当前 Node 进程状态的对象，提供了与操作系统的简单接口。有以下几种属性</p>
+<div class="hljs"><pre><code class="hljs javascript">process.pid <span class="hljs-comment">//进程编号</span>
+
+proces.env <span class="hljs-comment">//系统环境变量</span>
+
+process.argv <span class="hljs-comment">//命令行执行此脚本时输入的参数</span>
+
+process.platform <span class="hljs-comment">//当前操作系统的平台</span></code></pre></div>
+
+
+
+<h2 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h2><p><strong>buffer</strong> 让 JS 能够轻松的处理二进制数据流，结合Node 的流接口（stream）能够实现高效的二进制文件处理。</p>
+<h2 id="filename-和-dirname"><a href="#filename-和-dirname" class="headerlink" title="__filename 和 __dirname"></a>__filename 和 __dirname</h2><p>分别表示当前所运行 Node 脚本文件路径和所在的目录路径</p>
+<h1 id="Node-模块化机制"><a href="#Node-模块化机制" class="headerlink" title="Node 模块化机制"></a>Node 模块化机制</h1><h2 id="JS-的缺点："><a href="#JS-的缺点：" class="headerlink" title="JS 的缺点："></a>JS 的缺点：</h2><ul>
+<li>导入多个 JS 文件直接作用于全局命名空间，很容易产生<strong>命名冲突</strong></li>
+<li>导入的 JS 文件之间不能相互访问，很不方便</li>
+<li>导入的 &lt;script &gt; 无法轻易去除或修改</li>
+</ul>
+<h2 id="Node-模块机制浅析"><a href="#Node-模块机制浅析" class="headerlink" title="Node 模块机制浅析"></a>Node 模块机制浅析</h2><p>Node 引入了三个新的全局对象（还是 Node 专属哦）：1）<code>require</code>；2） <code>exports</code> 和 3）<code>module</code>。</p>
+<h3 id="exports-（导出模块）"><a href="#exports-（导出模块）" class="headerlink" title="exports （导出模块）"></a>exports （导出模块）</h3><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-comment">// myModule.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a, b</span>) </span>&#123;
+  <span class="hljs-keyword">return</span> a + b;
+&#125;
+
+<span class="hljs-comment">/*</span>
+<span class="hljs-comment"> *导出函数 add </span>
+<span class="hljs-comment"> *第一个add：模块名称，用于require引用</span>
+<span class="hljs-comment"> *第二个add：函数名称</span>
+<span class="hljs-comment">*/</span> 
+<span class="hljs-built_in">exports</span>.add = add;</code></pre></div>
+
+
+
+<h3 id="require-（导入模块）"><a href="#require-（导入模块）" class="headerlink" title="require （导入模块）"></a>require （导入模块）</h3><p>require 用于导入其他 Node 模块，其接受一个字符串代表的模块名称或路径，通常被称为<strong>模块标识符。</strong></p>
+<ul>
+<li>直接写模块名称，通常是核心模块或第三方文件模块，例如 <code>os</code>、<code>express</code> 等</li>
+<li>模块的相对路径（不推荐使用绝对路径），指向项目中其他 Node 模块，例如 <code>./utils</code></li>
+</ul>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-comment">// 导入内置库或第三方模块</span>
+<span class="hljs-keyword">const</span> os = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;os&#x27;</span>);
+<span class="hljs-keyword">const</span> myModule = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./myModule&#x27;</span>);
+myModule.add(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>);
+
+<span class="hljs-comment">// 通过相对路径导入其他模块</span>
+<span class="hljs-keyword">const</span> utils = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./utils&#x27;</span>);</code></pre></div>
+
+
+
+<h3 id="module"><a href="#module" class="headerlink" title="module"></a>module</h3><p><code>module</code> 对象有以下字段：</p>
+<ul>
+<li><code>id</code>：模块的唯一标识符，如果是被运行的主程序（例如 main.js）则为 <code>.</code>，如果是被导入的模块（例如 myModule.js）则等同于此文件名（即下面的 <code>filename</code> 字段）</li>
+<li><code>path</code> 和 <code>filename</code>：模块所在路径和文件名，没啥好说的</li>
+<li><code>exports</code>：模块所导出的内容，实际上<strong>之前的 <code>exports</code> 对象是指向 <code>module.exports</code> 的引用</strong>。例如对于 myModule.js，刚才我们导出了 <code>add</code> 函数，因此出现在了这个 <code>exports</code> 字段里面；而 main.js 没有导出任何内容，因此 <code>exports</code> 字段为空</li>
+<li><code>parent</code> 和 <code>children</code>：用于记录模块之间的导入关系，例如 main.js 中 <code>require</code> 了 myModule.js，那么 main 就是 myModule 的 <code>parent</code>，myModule 就是 main 的 <code>children</code></li>
+<li><code>loaded</code>：模块是否被加载，从上图中可以看出只有 <code>children</code> 中列出的模块才会被加载</li>
+<li><code>paths</code>：这个就是 Node <strong>搜索文件模块的路径列表</strong>，Node 会从第一个路径到最后一个路径依次搜索指定的 Node 模块，找到了则导入，找不到就会报错</li>
+</ul>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/Node/">Node</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Node/">Node</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/08/17/jQuery%E5%88%9D%E8%AF%86/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">jQuery初识</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/08/17/jQuery%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/">
+                        <span class="hidden-mobile">jQuery属性操作</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+
+  
+	  <!-- 博客运营时间 -->
+	  <div>
+		  <span id="timeDate">载入天数...</span>
+		  <span id="times">载入时分秒...</span>
+		  <script>
+		  var now = new Date();
+		  function createtime(){
+			  var grt= new Date("08/14/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+			  now.setTime(now.getTime()+250);
+			  days = (now - grt ) / 1000 / 60 / 60 / 24;
+			  dnum = Math.floor(days);
+			  hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+			  hnum = Math.floor(hours);
+			  if(String(hnum).length ==1 ){
+				  hnum = "0" + hnum;
+			  }
+			  minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+			  mnum = Math.floor(minutes);
+			  if(String(mnum).length ==1 ){
+						mnum = "0" + mnum;
+			  }
+			  seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+			  snum = Math.round(seconds);
+			  if(String(snum).length ==1 ){
+						snum = "0" + snum;
+			  }
+			  document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天";
+			  document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+		  }
+		  setInterval("createtime()",250);
+		  </script>
+		</div>
+		
+		
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+		
+
+		
+	
+		<!-- 一言 -->
+		<p id="hitokoto">:D 获取中...</p>
+		<script>
+		  fetch('https://v1.hitokoto.cn')
+			.then(response => response.json())
+			.then(data => {
+			  const hitokoto = document.getElementById('hitokoto')
+			  hitokoto.innerText = data.hitokoto
+			  })
+			  .catch(console.error)
+		</script>
+	</div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "初识Node&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

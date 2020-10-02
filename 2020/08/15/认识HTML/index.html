@@ -1,0 +1,788 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  
+    <meta name="baidu-site-verification" content="jre71SFl7b" />
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="lixinsta">
+  <meta name="keywords" content="">
+  <title>认识HTML - 自学前端的程序猿</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="自学前端的程序猿" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 40vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>自学前端的程序猿</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-images"></i>
+                思维导图
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://www.processon.com/view/5f3944647d9c0806d41a7d7a#map">
+                    
+                    HTML
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://www.processon.com/view/5f3a1982079129531b5ec238#map">
+                    
+                    CSS
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/icon/">
+                    
+                    JavaScript
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-08-15 08:20" pubdate>
+      2020年8月15日 早上
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      21
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">认识HTML</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="HTML-初识"><a href="#HTML-初识" class="headerlink" title="HTML 初识"></a>HTML 初识</h1><ul>
+<li>HTML 指的是超文本标记语言 (<strong>H</strong>yper <strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage)是用来描述网页的一种语言。</li>
+<li>HTML 不是一种编程语言，而是一种标记语言 (markup language)</li>
+<li>标记语言是一套标记标签 (markup tag)</li>
+</ul>
+<blockquote>
+<p>网页是由网页元素组成的 ， 这些元素是利用html标签描述出来，然后通过浏览器解析，就可以显示给用户了。</p>
+</blockquote>
+<p><strong>所谓超文本，有2层含义：</strong> </p>
+<ol>
+<li>因为它可以加入图片、声音、动画、多媒体等内容（**超越文本限制 **）</li>
+<li>不仅如此，它还可以从一个文件跳转到另一个文件，与世界各地主机的文件连接（**超级链接文本 **）。</li>
+</ol>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;timg.jpg&quot;</span> /&gt;</span></code></pre></div>
+
+<p><strong>html 总结:</strong></p>
+<ul>
+<li>html 是超文本标记(标签)语言</li>
+<li>我们学习html 主要学习html标签</li>
+<li>我们用html标签描述网页元素。 比如 图片标签 、文字标签、链接标签等等</li>
+<li>标签有自己的语法规范，所有的html标签都是用 &lt; &gt; 表示的</li>
+</ul>
+<h2 id="HTML骨架标签"><a href="#HTML骨架标签" class="headerlink" title="HTML骨架标签"></a>HTML骨架标签</h2><p>日常生活中，我们要遵循共同的约定。 </p>
+<p>同理：HTML 有自己的语言语法骨架格式：</p>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>   
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>     
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre></div>
+
+<h4 id="html骨架标签总结"><a href="#html骨架标签总结" class="headerlink" title="html骨架标签总结"></a>html骨架标签总结</h4><table>
+<thead>
+<tr>
+<th align="center">标签名</th>
+<th align="center">定义</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&lt;html&gt;&lt;/html&gt;</td>
+<td align="center">HTML标签</td>
+<td align="left">页面中最大的标签，我们成为  根标签</td>
+</tr>
+<tr>
+<td align="center">&lt;head&gt;&lt;/head&gt;</td>
+<td align="center">文档的头部</td>
+<td align="left">注意在head标签中我们必须要设置的标签是title</td>
+</tr>
+<tr>
+<td align="center">&lt;titile&gt;&lt;/title&gt;</td>
+<td align="center">文档的标题</td>
+<td align="left">让页面拥有一个属于自己的网页标题</td>
+</tr>
+<tr>
+<td align="center">&lt;body&gt;&lt;/body&gt;</td>
+<td align="center">文档的主体</td>
+<td align="left">元素包含文档的所有内容，页面内容 基本都是放到body里面的</td>
+</tr>
+</tbody></table>
+ <img src='./01html骨架.jpg'>
+
+<h4 id="团队约定大小写"><a href="#团队约定大小写" class="headerlink" title="团队约定大小写"></a>团队约定大小写</h4><p>HTML标签名、类名、标签属性和大部分属性值统一用<strong>小写</strong></p>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>     
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>我的第一个页面<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre></div>
+
+<h2 id="HTML元素标签分类"><a href="#HTML元素标签分类" class="headerlink" title="HTML元素标签分类"></a>HTML元素标签分类</h2><p><strong>标签：</strong></p>
+<p>在HTML页面中，带有“ &lt;  &gt;”符号的元素被称为HTML标签，如上面提到的 &lt;html&gt;、&lt;head&gt;、&lt;body&gt;都是HTML骨架结构标签。</p>
+<p><strong>分类：</strong></p>
+<ol>
+<li>常规元素（双标签）</li>
+</ol>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">标签名</span>&gt;</span> 内容 <span class="hljs-tag">&lt;/<span class="hljs-name">标签名</span>&gt;</span>   比如 <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>  我是文字  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre></div>
+
+<ul>
+<li>该语法中“&lt;标签名&gt;”表示该标签的作用开始，一般称为“开始标签（start tag）”，“&lt;/标签名&gt;” 表示该标签的作用结束，一般称为“结束标签（end tag）”。</li>
+<li>和开始标签相比，结束标签只是在前面加了一个关闭符“/”。</li>
+<li>我们以后接触的基本都是双标签</li>
+</ul>
+<ol start="2">
+<li>空元素（单标签）</li>
+</ol>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">标签名</span> /&gt;</span>  比如  <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span></code></pre></div>
+
+<ul>
+<li><p>空元素 用单标签来表示， 简单点说，就是里面不需要包含内容， 只有一个开始标签不需要关闭。</p>
+<blockquote>
+<p>世界上单身狗毕竟是少数的， 大部分还是喜欢成双成对，不要拉下你的另外一半，对待一个双标签要有始有终。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="HTML标签关系"><a href="#HTML标签关系" class="headerlink" title="HTML标签关系"></a>HTML标签关系</h2><p>主要针对于<strong>双标签</strong> 的相互关系分为两种：</p>
+<ol>
+<li>嵌套关系</li>
+</ol>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>  
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre></div>
+
+<p>2.并列关系</p>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre></div>
+
+<p><strong>倡议：</strong> </p>
+<blockquote>
+<div class="hljs"><pre><code class="hljs html">如果两个标签之间的关系是嵌套关系，子元素最好缩进一个tab键的身位（一个tab是4个空格）。如果是并列关系，最好上下对齐。</code></pre></div>
+</blockquote>
+<blockquote>
+<p>html双标签 可以分为  有 一种是 父子级 包含关系的标签      一种是 兄弟级 并列关系的标签</p>
+</blockquote>
+<h1 id="文档类型-lt-DOCTYPE-gt"><a href="#文档类型-lt-DOCTYPE-gt" class="headerlink" title="文档类型&lt;!DOCTYPE&gt;"></a>文档类型&lt;!DOCTYPE&gt;</h1><p><strong>用法：</strong></p>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span></code></pre></div>
+
+<p><strong>作用：</strong></p>
+<!DOCTYPE><p> 声明位于文档中的最前面的位置，处于 <html> 标签之前。此标签可告知浏览器文档使用哪种 HTML 或 XHTML 规范。<!DOCTYPE html>  就是告诉浏览器按照HTML5规范解析页面.</p>
+<p><strong>团队约定：</strong></p>
+<blockquote>
+<div class="hljs"><pre><code class="hljs apache"><span class="hljs-attribute">HTML</span>文件必须加上 DOCTYPE 声明，并统一使用 HTML<span class="hljs-number">5</span> 的文档声明</code></pre></div>
+</blockquote>
+<h1 id="页面语言lang"><a href="#页面语言lang" class="headerlink" title="页面语言lang"></a>页面语言lang</h1><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>  指定html 语言种类</code></pre></div>
+
+<p>最常见的2个：</p>
+<ol>
+<li><code>en</code>定义语言为英语</li>
+<li><code>zh-CN</code>定义语言为中文</li>
+</ol>
+<blockquote>
+ <html lang="zh-CN">  指定该html标签 内容 所用的语言为中文
+</blockquote>
+<p><strong>团队约定：</strong></p>
+<blockquote>
+<div class="hljs"><pre><code class="hljs armasm">考虑浏览器和操作系统的兼容性，目前仍然使用 zh-<span class="hljs-meta">CN</span> 属性值</code></pre></div>
+</blockquote>
+<h1 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h1><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span></code></pre></div>
+
+<div class="hljs"><pre><code class="hljs pgsql">字符集(<span class="hljs-type">Character</span> <span class="hljs-keyword">set</span>)是多个字符的集合。
+
+计算机要准确的处理各种字符集文字，需要进行字符编码，以便计算机能够识别和存储各种文字。</code></pre></div>
+
+<p>utf-8是目前最常用的字符集编码方式，常用的字符集编码方式还有gbk和gb2312。</p>
+<ul>
+<li>gb2312 简单中文  包括6763个汉字  GUO BIAO</li>
+<li>BIG5   繁体中文 港澳台等用</li>
+<li>GBK包含全部中文字符    是GB2312的扩展，加入对繁体字的支持，兼容GB2312</li>
+<li>UTF-8则基本包含全世界所有国家需要用到的字符</li>
+<li><strong>这句代码非常关键， 是必须要写的代码，否则可能引起乱码的情况。</strong></li>
+</ul>
+<blockquote>
+<p>这句话是让 html 文件是以 UTF-8 编码保存的， 浏览器根据编码去解码对应的html内容。</p>
+</blockquote>
+<p><strong>团队约定：</strong></p>
+<blockquote>
+<div class="hljs"><pre><code class="hljs 1c">一般情况下统一使用 <span class="hljs-string">&quot;UTF-8&quot;</span> 编码, 请尽量统一写成标准的 <span class="hljs-string">&quot;UTF-8&quot;</span>，不要写成 <span class="hljs-string">&quot;utf-8&quot;</span> 或 <span class="hljs-string">&quot;utf8&quot;</span> 或 <span class="hljs-string">&quot;UTF8&quot;</span>。</code></pre></div>
+</blockquote>
+<h1 id="HTML标签的语义化"><a href="#HTML标签的语义化" class="headerlink" title="HTML标签的语义化"></a>HTML标签的语义化</h1><p>白话： 所谓标签语义化，就是指标签的含义。</p>
+<p><strong>一句话说出语义化目的:</strong></p>
+<blockquote>
+<p>根据标签的语义，在合适的地方给一个最为合理的标签，让结构更清晰。</p>
+</blockquote>
+<ol>
+<li>方便代码的阅读和维护</li>
+<li>同时让浏览器或是网络爬虫可以很好地解析，从而更好分析其中的内容 </li>
+<li>使用语义化标签会具有更好地搜索引擎优化 </li>
+</ol>
+<img src="./02语义化.jpg" srcset="/img/loading.gif">
+
+
+
+<p>语义是否良好： 当我们去掉CSS之后，网页结构依然组织有序，并且有良好的可读性。(  裸奔起来一样好看 )</p>
+<p>遵循的原则：先确定语义的HTML ，再选合适的CSS。所以，<strong>我们接下来学习html标签，要根据语义去记忆。</strong> HTML网页中任何元素的实现都要依靠HTML标签。</p>
+<h1 id="html5发展之路"><a href="#html5发展之路" class="headerlink" title="html5发展之路"></a>html5发展之路</h1> <img src="./html5.png" srcset="/img/loading.gif"/>
+
+
+
+<h4 id="什么是XHTML"><a href="#什么是XHTML" class="headerlink" title="什么是XHTML"></a>什么是XHTML</h4><p>XHTML 是更严格更纯净的 HTML 代码。</p>
+<ul>
+<li>XHTML 指<strong>可扩展超文本标签语言</strong>（EXtensible HyperText Markup Language）。</li>
+<li>XHTML 的目标是取代 HTML。</li>
+<li>XHTML 与 HTML 4.01 几乎是相同的。</li>
+<li>XHTML 是更严格更纯净的 HTML 版本。</li>
+<li>XHTML 是作为一种 XML 应用被重新定义的 HTML。</li>
+<li>XHTML 是一个 W3C 标准。</li>
+</ul>
+<h4 id="HTML和-XHTML之间有什么区别"><a href="#HTML和-XHTML之间有什么区别" class="headerlink" title="HTML和 XHTML之间有什么区别?"></a>HTML和 XHTML之间有什么区别?</h4><ul>
+<li>XHTML 指的是可扩展超文本标记语言</li>
+<li>XHTML 与 HTML 4.01 几乎是相同的</li>
+<li>XHTML 是更严格更纯净的 HTML 版本</li>
+<li>XHTML 是以 XML 应用的方式定义的 HTML</li>
+<li>XHTML 是 2001 年 1 月发布的 W3C 推荐标准</li>
+<li>XHTML 得到所有主流浏览器的支持</li>
+<li>XHTML 元素是以 XML 格式编写的 HTML 元素。XHTML是严格版本的HTML，例如它要求标签必须小写，标签必须被正确关闭，标签顺序必须正确排列，对于属性都必须使用双引号等。</li>
+</ul>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/HTML/">HTML</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/HTML/">HTML</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/08/15/HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">HTML常用标签及路径</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/08/15/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+
+  
+	  <!-- 博客运营时间 -->
+	  <div>
+		  <span id="timeDate">载入天数...</span>
+		  <span id="times">载入时分秒...</span>
+		  <script>
+		  var now = new Date();
+		  function createtime(){
+			  var grt= new Date("08/14/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+			  now.setTime(now.getTime()+250);
+			  days = (now - grt ) / 1000 / 60 / 60 / 24;
+			  dnum = Math.floor(days);
+			  hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+			  hnum = Math.floor(hours);
+			  if(String(hnum).length ==1 ){
+				  hnum = "0" + hnum;
+			  }
+			  minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+			  mnum = Math.floor(minutes);
+			  if(String(mnum).length ==1 ){
+						mnum = "0" + mnum;
+			  }
+			  seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+			  snum = Math.round(seconds);
+			  if(String(snum).length ==1 ){
+						snum = "0" + snum;
+			  }
+			  document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天";
+			  document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+		  }
+		  setInterval("createtime()",250);
+		  </script>
+		</div>
+		
+		
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+		
+
+		
+	
+		<!-- 一言 -->
+		<p id="hitokoto">:D 获取中...</p>
+		<script>
+		  fetch('https://v1.hitokoto.cn')
+			.then(response => response.json())
+			.then(data => {
+			  const hitokoto = document.getElementById('hitokoto')
+			  hitokoto.innerText = data.hitokoto
+			  })
+			  .catch(console.error)
+		</script>
+	</div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "认识HTML&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
