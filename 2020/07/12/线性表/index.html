@@ -20,7 +20,7 @@
   <meta name="description" content="">
   <meta name="author" content="lixinsta">
   <meta name="keywords" content="">
-  <title>Hello World - 自学前端的程序猿</title>
+  <title>线性表 - 自学前端的程序猿</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -203,8 +203,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-08-15 01:32" pubdate>
-      2020年8月15日 凌晨
+    <time datetime="2020-07-12 14:21" pubdate>
+      2020年7月12日 下午
     </time>
   </div>
 
@@ -214,7 +214,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      97 字
+      147 字
     </span>
   
 
@@ -254,39 +254,34 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">线性表</h1>
             
             <div class="markdown-body" id="post-body">
-              <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="hljs"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span></code></pre></div>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="hljs"><pre><code class="hljs bash">$ hexo server</code></pre></div>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="hljs"><pre><code class="hljs bash">$ hexo generate</code></pre></div>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="hljs"><pre><code class="hljs bash">$ hexo deploy</code></pre></div>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="cby-git" data-slug-hash="PoNyrBg" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="PoNyrBg">
-        <span>See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/cby-git/pen/PoNyrBg">
-        PoNyrBg</a> by cby-git (<a target="_blank" rel="noopener" href="https://codepen.io/cby-git">@cby-git</a>)
-        on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.</span>
-      </p><script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="cby-git" data-slug-hash="PoNyrBg" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="PoNyrBg">
-        <span>See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/cby-git/pen/PoNyrBg">
-        PoNyrBg</a> by cby-git (<a target="_blank" rel="noopener" href="https://codepen.io/cby-git">@cby-git</a>)
-        on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.</span>
-      </p>
-      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
+              <blockquote>
+<p>线性表<em>（linear list）</em>是数据结构的一种，一个线性表是n个具有相同特性的数据元素的有限序列。</p>
+</blockquote>
+<ul>
+<li>是一个有序序列</li>
+<li>若元素存在多个，则第一个元素无前驱，而最后一个元素无后继，其他元素有且只有一个前驱和后继。</li>
+</ul>
+<h1 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h1><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><blockquote>
+<p>数据类型：是指一组性质相同的值的集合及定义在此集合上的一些操作的总称。</p>
+</blockquote>
+<p>简单来说就是编程语言的整型、浮点型、字符型。。。。</p>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
+                    
+                  </div>
                 
                 
               </div>
@@ -298,21 +293,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/08/15/%E8%AE%A4%E8%AF%86HTML/">
+                      <a href="/2020/08/15/hello-world/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">认识HTML</span>
+                        <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2020/07/12/%E7%BA%BF%E6%80%A7%E8%A1%A8/">
-                        <span class="hidden-mobile">线性表</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
@@ -522,7 +511,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Hello World&nbsp;",
+        "线性表&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
