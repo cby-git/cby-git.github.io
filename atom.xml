@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-09T13:39:34.753Z</updated>
+  <updated>2020-10-10T15:29:49.821Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算机网络概述</title>
+    <link href="http://yoursite.com/2020/10/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    <id>http://yoursite.com/2020/10/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</id>
+    <published>2020-10-10T07:59:03.336Z</published>
+    <updated>2020-10-10T15:29:49.821Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是计算机网络"><a href="#什么是计算机网络" class="headerlink" title="什么是计算机网络"></a>什么是计算机网络</h1><blockquote><p>计算机网络主要由一些通用的、可编程的硬件互连而成，通过这些硬件，可以传送不同类型的数据，并且可以支持广泛和日益增长的应用。</p></blockquote><ul><li>计算机网络不是软件概念，还包含了硬件设备。如网卡等。</li><li>计算机网络不仅仅是信息通信，还可以支持广泛的应用。</li></ul><h2 id="计算机网络的分类"><a href="#计算机网络的分类" class="headerlink" title="计算机网络的分类"></a>计算机网络的分类</h2><img src="https://appwk.baidu.com/naapi/doc/view?ih=810&amp;o=jpg_6&amp;iw=1080&amp;ix=0&amp;iy=0&amp;aimw=1080&amp;rn=1&amp;doc_id=5a91d1f9aef8941ea76e0592&amp;pn=9&amp;sign=cb8f4f37f8e00899b338be347dd64c21&amp;type=1&amp;app_ver=2.9.8.2&amp;ua=bd_800_800_IncredibleS_2.9.8.2_2.3.7&amp;bid=1&amp;app_ua=IncredibleS&amp;uid=&amp;cuid=&amp;fr=3&amp;Bdi_bear=WIFI&amp;from=3_10000&amp;bduss=&amp;pid=1&amp;screen=800_800&amp;sys_ver=2.3.7" style="zoom:80%;" /><table><thead><tr><th align="center">分类</th><th align="center">英文</th><th align="center">范围</th><th align="center">区域</th></tr></thead><tbody><tr><td align="center">广域网</td><td align="center">WAN</td><td align="center">几十到几千公里</td><td align="center">跨省、跨国</td></tr><tr><td align="center">城域网</td><td align="center">MAN</td><td align="center">5KM——50KM</td><td align="center">城市间</td></tr><tr><td align="center">局域网</td><td align="center">LAN</td><td align="center">1KM以内</td><td align="center">地区内</td></tr></tbody></table><h1 id="网络的层次结构"><a href="#网络的层次结构" class="headerlink" title="网络的层次结构"></a>网络的层次结构</h1><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=705014357,1261413377&amp;fm=26&amp;gp=0.jpg" style="zoom:80%;" /><h2 id="层次结构设计的基本原则"><a href="#层次结构设计的基本原则" class="headerlink" title="层次结构设计的基本原则"></a>层次结构设计的基本原则</h2><ul><li>各层之间是相互独立的</li><li>每层要有足够的灵活性</li><li>各层之间完全解耦</li></ul><h2 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h2><ul><li>应用层：为计算机用户提供接口和服务</li><li>表示层：数据处理（编码解码、加密解密等）</li><li>会话层：管理（建立、维护、重连）通信会话</li><li>传输层：管理端到端的通信连接</li><li>网络层：数据路由（决定数据在网络的路径）</li><li>数据链路层：管理相邻节点之间的数据通信</li><li>物理层：数据通信的光电物理特性</li></ul><h2 id="TCP-IP四层模型"><a href="#TCP-IP四层模型" class="headerlink" title="TCP/IP四层模型"></a>TCP/IP四层模型</h2><table><thead><tr><th align="center">应用层</th><th align="center">传输层</th><th align="center">网络层</th><th align="center">网络接口层</th></tr></thead><tbody><tr><td align="center">HTTP、FTP、SMIP、POP3。。。</td><td align="center">TCP、UDP</td><td align="center">IP</td><td align="center">Ethernet、PPP。。。</td></tr></tbody></table><h1 id="网络的性能指标"><a href="#网络的性能指标" class="headerlink" title="网络的性能指标"></a>网络的性能指标</h1><table><thead><tr><th></th><th>名字</th><th>换算</th><th>常用设备</th></tr></thead><tbody><tr><td>bit</td><td>比特位</td><td></td><td>门电路</td></tr><tr><td>Byte</td><td>字节</td><td>8bit</td><td></td></tr><tr><td>KB</td><td>千字节</td><td>1024B</td><td>寄存器</td></tr><tr><td>MB</td><td>兆字节</td><td>1024KB</td><td>高速缓存</td></tr><tr><td>GB</td><td>吉字节</td><td>1024MB</td><td>内存/硬盘</td></tr><tr><td>TB</td><td>太字节</td><td>1024GB</td><td>硬盘</td></tr><tr><td>PB</td><td>拍字节</td><td>1024TB</td><td>云硬盘</td></tr><tr><td>EB</td><td>艾字节</td><td>1024PB</td><td>数据仓库</td></tr></tbody></table><h2 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h2><blockquote><p>时延是指一个报文或分组从一个网络的一端传送到另一个端所需要的时间。它包括了发送时延，传播时延，处理时延，排队时延。（时延=发送时延+传播时延+处理时延+排队时延）</p></blockquote><ul><li><strong>发送时延</strong>：发送数据所需要的时间，也就是从网卡或者路由器队列递交网络链路所需要的时间。用L比特表示分组的长度，用R bps表示从路由器A到路由器B的链路传输速率，传输时延则是L/R。</li><li><strong>传播时延</strong>：指在链路上传播数据所需要的时间。传播时延等于两台路由器之间的距离除以传播速率，即传播时延是D/S，其中D是两台路由器之间的距离，S是该链路的传播速率。</li><li><strong>处理时延</strong>：主机或路由器在收到分组后要花费一定的时间进行处理，比如分析首部，提取数据，差错检验，路由选择等。</li><li><strong>排队时延</strong>：路由器或者交换机处理数据包排队所消耗的时间。</li></ul><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;什么是计算机网络&quot;&gt;&lt;a href=&quot;#什么是计算机网络&quot; class=&quot;headerlink&quot; title=&quot;什么是计算机网络&quot;&gt;&lt;/a&gt;什么是计算机网络&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;计算机网络主要由一些通用的、可编程的硬件互连而成，通过这些硬件，可</summary>
+      
+    
+    
+    
+    <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="计算机网络" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>栈</title>
@@ -29,6 +54,36 @@
       
       
     <summary type="html">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;h</summary>
+      
+    
+    
+    
+    <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>线性表</title>
+    <link href="http://yoursite.com/2020/10/05/%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
+    <id>http://yoursite.com/2020/10/05/%E7%BA%BF%E6%80%A7%E8%A1%A8/</id>
+    <published>2020-10-05T02:30:28.644Z</published>
+    <updated>2020-10-09T14:26:42.810Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>线性表<em>（linear list）</em>是数据结构的一种，一个线性表是n个具有相同特性的数据元素的有限序列。</p></blockquote><ul><li><p>是一个有序序列</p></li><li><p>0个元素构成的线性表是空表</p></li><li><p>若元素存在多个，则第一个元素无前驱，而最后一个元素无后继，其他元素有且只有一个前驱和后继。</p></li><li><p>线性表是有长度的，其长度就是元素的个数，且线性表的元素个数是有限的，也就是说线性表的长度是有限的。</p><p>如果用数学语言来进行定义，可如下：<br>若将线性表记为（a1,…,ai-1,ai,ai+1,…an）,则表中ai-1领先于ai,ai领先于ai+1,称ai-1是ai的直接前驱元素,ai+1是ai的直接后继元素。</p><p><strong>a1 , a2 , ………… ai-1 , ai , ai+1 ,……… an</strong></p></li></ul><h1 id="线性表的基本操作"><a href="#线性表的基本操作" class="headerlink" title="线性表的基本操作"></a>线性表的基本操作</h1><pre><code class="hljs java">InitList(L): 初始化操作，建立一个空的线性表L。ListEmpty(L): 判断线性表是否为空表，若线性表为空，返回<span class="hljs-keyword">true</span>，否则返回<span class="hljs-keyword">false</span>。ClearList(L): 将线性表清空。 GetElem(L,i,e): 将线性表L中的第i个位置元素值返回给e。LocateElem(L,e): 在线性表L中查找与给定值e相等的元素，如果查找成功，返回该元素在表中序号表示成功；否则，返回<span class="hljs-number">0</span>表示失败。ListInsert(L,i,e): 在线性表L中第i个位置插入新元素e。ListDelete(L,i,e): 删除线性表L中第i个位置元素，并用e返回其值。ListLength(L): 返回线性表L的元素个数。</code></pre><p>对于不同的应用，线性表的基本操作是不同的，上述是最基本的操作。对于关于线性表更复杂的操作完全可以用基本操作的组合来实现。</p><h1 id="两种不同的线性表"><a href="#两种不同的线性表" class="headerlink" title="两种不同的线性表"></a>两种不同的线性表</h1><p>线性表是线性结构的一种，当然也有物理结构了。也就是说线性表有两种：<strong>顺序结构线性表（叫做顺序表）</strong>和<strong>链式结构线性表（链表）</strong>。</p><h2 id="顺序存储线性表"><a href="#顺序存储线性表" class="headerlink" title="顺序存储线性表"></a>顺序存储线性表</h2><h2 id="链式存储线性表"><a href="#链式存储线性表" class="headerlink" title="链式存储线性表"></a>链式存储线性表</h2><h1 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h1><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><blockquote><p>数据类型：是指一组性质相同的值的集合及定义在此集合上的一些操作的总称。</p></blockquote><p>简单来说就是编程语言的整型、浮点型、字符型。。。。</p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;线性表&lt;em&gt;（linear list）&lt;/em&gt;是数据结构的一种，一个线性表是n个具有相同特性的数据元素的有限序列。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;是一个有序序列&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;0个元素构成的线性</summary>
       
     
     
@@ -505,55 +560,6 @@
     
     
     <category term="HTML" scheme="http://yoursite.com/tags/HTML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2020/08/15/hello-world/"/>
-    <id>http://yoursite.com/2020/08/15/hello-world/</id>
-    <published>2020-08-14T17:32:06.981Z</published>
-    <updated>2020-09-20T12:55:17.684Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="hljs bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="hljs bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="hljs bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="cby-git" data-slug-hash="PoNyrBg" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="PoNyrBg">        <span>See the Pen <a href="https://codepen.io/cby-git/pen/PoNyrBg">        PoNyrBg</a> by cby-git (<a href="https://codepen.io/cby-git">@cby-git</a>)        on <a href="https://codepen.io">CodePen</a>.</span>      </p><script async src="https://static.codepen.io/assets/embed/ei.js"></script><p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="cby-git" data-slug-hash="PoNyrBg" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="PoNyrBg">        <span>See the Pen <a href="https://codepen.io/cby-git/pen/PoNyrBg">        PoNyrBg</a> by cby-git (<a href="https://codepen.io/cby-git">@cby-git</a>)        on <a href="https://codepen.io">CodePen</a>.</span>      </p>      <script async src="https://static.codepen.io/assets/embed/ei.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>线性表</title>
-    <link href="http://yoursite.com/2020/07/12/%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
-    <id>http://yoursite.com/2020/07/12/%E7%BA%BF%E6%80%A7%E8%A1%A8/</id>
-    <published>2020-07-12T06:21:35.000Z</published>
-    <updated>2020-10-06T05:01:43.279Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>线性表<em>（linear list）</em>是数据结构的一种，一个线性表是n个具有相同特性的数据元素的有限序列。</p></blockquote><ul><li>是一个有序序列</li><li>若元素存在多个，则第一个元素无前驱，而最后一个元素无后继，其他元素有且只有一个前驱和后继。</li></ul><h1 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h1><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><blockquote><p>数据类型：是指一组性质相同的值的集合及定义在此集合上的一些操作的总称。</p></blockquote><p>简单来说就是编程语言的整型、浮点型、字符型。。。。</p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;线性表&lt;em&gt;（linear list）&lt;/em&gt;是数据结构的一种，一个线性表是n个具有相同特性的数据元素的有限序列。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;是一个有序序列&lt;/li&gt;
-&lt;li&gt;若元素存在多个，则第一个元素无前驱，而最</summary>
-      
-    
-    
-    
-    <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
     
   </entry>
   
