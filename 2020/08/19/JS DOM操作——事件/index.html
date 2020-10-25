@@ -214,7 +214,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.1k 字
+      4.3k 字
     </span>
   
 
@@ -224,7 +224,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      54
+      56
        分钟
     </span>
   
@@ -423,7 +423,21 @@
     &#125;)
 &lt;/script&gt;</code></pre></div>
 
-<h1 id="事件高级"><a href="#事件高级" class="headerlink" title="事件高级"></a>事件高级</h1><h2 id="注册事件（2种方式）"><a href="#注册事件（2种方式）" class="headerlink" title="注册事件（2种方式）"></a>注册事件（2种方式）</h2><p><img src="./1551165252019.png" srcset="/img/loading.gif" alt="1551165252019"></p>
+<h1 id="事件高级"><a href="#事件高级" class="headerlink" title="事件高级"></a>事件高级</h1><h2 id="注册事件（2种方式）"><a href="#注册事件（2种方式）" class="headerlink" title="注册事件（2种方式）"></a>注册事件（2种方式）</h2><p>给元素添加事件，称为注册事件 或者 绑定事件。注册事件有两种方式：<strong>传统方式</strong>和<strong>监听注册方式</strong>。</p>
+<h3 id="传统注册方式"><a href="#传统注册方式" class="headerlink" title="传统注册方式"></a>传统注册方式</h3><ul>
+<li>利用 on 开头的事件 onclick</li>
+<li>&lt;button onclick=”alter(‘hello~’)”&gt; &lt;/button&gt;</li>
+<li>btn.onclick = function() {}</li>
+<li>特点：注册事件的唯一性</li>
+<li>同一个元素同一个事件只能设置一个处理函数，最后注册的处理函数将会覆盖前面注册的处理函数</li>
+</ul>
+<h3 id="监听注册方式"><a href="#监听注册方式" class="headerlink" title="监听注册方式"></a>监听注册方式</h3><ul>
+<li>w3c 标准，推荐方式</li>
+<li>addEventListener() 它是一个方法</li>
+<li>IE9 之前的 IE 不支持此方法，可使用 attachEvent() 代替</li>
+<li>特点：同一个元素同一个事件可以注册多个监听器</li>
+<li>按注册顺序依次执行</li>
+</ul>
 <h2 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h2><h4 id="addEventListener-事件监听（IE9以后支持）"><a href="#addEventListener-事件监听（IE9以后支持）" class="headerlink" title="addEventListener()事件监听（IE9以后支持）"></a>addEventListener()事件监听（IE9以后支持）</h4><blockquote>
 <p>eventTarget.addEventListener(type, listener[,useCapture])</p>
 <p>type：事件类型字符串，如 click、mouseover，注意不带 on</p>
@@ -532,7 +546,7 @@
 <blockquote>
 <p>比如：我们给页面中的一个div注册了单击事件，当你单击了div时，也就单击了body，单击了html，单击了document。</p>
 </blockquote>
-<p><img src="./1551166555833.png" srcset="/img/loading.gif" alt="1551166555833"></p>
+<p><img src="https://ss2.baidu.com/6ON1bjeh1BF3odCf/it/u=3606961125,3430026885&fm=27&gp=0.jpg" srcset="/img/loading.gif" alt="1551166555833"></p>
 <p><strong>DOM 事件流会经历3个阶段：</strong> </p>
 <ol>
 <li><p>捕获阶段</p>
@@ -543,7 +557,8 @@
 </li>
 </ol>
 <p>​    我们向水里面扔一块石头，首先它会有一个下降的过程，这个过程就可以理解为从最顶层向事件发生的最具体元素（目标点）的捕获过程；之后会产生泡泡，会在最低点（ 最具体元素）之后漂浮到水面上，这个过程相当于事件冒泡。 </p>
-<p><img src="./1551169007768.png" srcset="/img/loading.gif" alt="1551169007768"></p>
+<img src="https://ss1.baidu.com/6ON1bjeh1BF3odCf/it/u=3426436112,4139264715&amp;fm=15&amp;gp=0.jpg" srcset="/img/loading.gif" alt="1551169007768" style="zoom:80%;" />
+
 <p><strong>注意：</strong></p>
 <ol>
 <li>JS 代码中只能执行捕获或者冒泡其中的一个阶段。</li>
